@@ -1,3 +1,4 @@
+##### Pipeline#####
 name: CI-CD-Pipeline-to-AWS
 env:
   EB_PACKAGE_S3_BUCKET_NAME : "klymenok-flask-application-packedges"
