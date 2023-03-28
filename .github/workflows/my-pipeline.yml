@@ -24,10 +24,10 @@ jobs:
         run : zip -r ${{ env.DEPLOY_PACKAGE_NAME }} ./ -x *.git*
         
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@master
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id       : ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key-id: ${{ secrets.AWS_SECRET_KEY }}
+          aws-secret-access-key   : ${{ secrets.AWS_SECRET_KEY }}
           aws-region              : ${{ env.AWS_REGION_NAME }}
       
       - name: Copy deployment files to S3 bucket
@@ -39,10 +39,10 @@ jobs:
      
      steps:
         - name: Configure AWS Credentials
-          uses: aws-actions/configure-aws-credentials@master
+          uses: aws-actions/configure-aws-credentials@v2
           with:
             aws-access-key-id       : ${{ secrets.AWS_ACCESS_KEY }}
-            aws-secret-access-key-id: ${{ secrets.AWS_SECRET_KEY }}
+            aws-secret-access-key   : ${{ secrets.AWS_SECRET_KEY }}
             aws-region              : ${{ env.AWS_REGION_NAME }}
             
         - name: Create ElasticBeanstalk Application
